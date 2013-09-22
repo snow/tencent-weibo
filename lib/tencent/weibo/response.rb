@@ -8,6 +8,6 @@ OAuth2::Response.register_parser(:tencent_json, []) do |body|
         encode(Encoding::UTF_8)
     end
 
-    MultiJson.load(body_as_utf8)
+    MultiJson.load(body_as_utf8, symbolize_keys: true)
   end
 end
